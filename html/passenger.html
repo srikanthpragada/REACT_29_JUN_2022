@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger</title>
+</head>
+
+<body>
+    <h1>Passenger Information</h1>
+    <form>
+        <table cellpadding="5px">
+            <tr>
+                <td> <label for="name">name</label> </td>
+                <td> <input type="text" id="name" name="name" required maxlength="8" />*</td>
+            </tr>
+            <tr>
+                <td> <label for="email">emailid</label> </td>
+                <td> <input type="emailid" id="email" name="email" required maxlength="20" />*</td>
+            </tr>
+            <tr>
+                <td> <label for="age">age</label> </td>
+                <td> <input type="number" id="age" name="age" maxlength="2" /></td>
+            </tr>
+            <tr>
+                <td> <label for="gender">gender</label> </td>
+                <td> <input type="radio" name="gender" value="m" checked />Male
+                    <input type="radio" name="gender" value="f" />female
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="cm" />Has Driving License
+                </td>
+                
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="meal" />Meal on board
+                </td>
+            </tr>
+        </table>
+        <p></p>
+
+
+
+
+
+        <input type="submit" value="submit" />
+    </form>
+
+</body>
+
+</html>
