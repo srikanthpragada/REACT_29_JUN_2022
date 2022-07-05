@@ -1,33 +1,33 @@
 <html>
-
 <head>
-   
+    <title>Simple Selectors Demo</title>
     <style>
-        /* all h2 elements */
+        /* Element Selector */
         h2 {
             color: red;
             font-family: 'arial';
         }
 
-        /* by id */
-        #d2 {
+        /* ID selector */
+        #d1 {
             color: green;
         }
 
-        /* Multiple elements */
-        h1,
-        h2 {
+        /* Group selector */
+        h1, h2 {
             letter-spacing: 2pt;
         }
-
-        /* CSS class */
+        
+        /* Class selector */
         .banner {
             color: blue;
             font-size: 2em;
             letter-spacing: 2px;
         }
-        div.banner {
-            background-color:yellow;
+
+        /* Element and class selector */
+        span.banner {
+            background-color: yellow;
         }
     </style>
 </head>
@@ -38,25 +38,12 @@
     <h2>Srikanth Pragada</h2>
     <h1>Simple Heading</h1>
 
-    <div title="First">
-        First DIV
-        <br />
-        <a href="">Anchor Inside DIV</a>
-        <p>
-            Paragraph One <pre>DIV -> P -> PRE </pre>
-            <a href="" title="It Shows Details">Inside P, which is in DIV</a>
-        </p>
-    </div>
-    <div id="d2">Second DIV</div>
+    <div id="d1">This is a DIV</div>
     <p></p>
     <a href="google.com" target="_blank">Google</a>
-
     <div class="banner">Banner</div>
     <span class="banner">Span Banner</span>
-    <ul>
-        <li>One</li>
-        <li>Two</li>
-    </ul>
+     
 </body>
 
 </html>
