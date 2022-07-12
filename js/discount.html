@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculateDiscount() {
+           var txtPrice = document.getElementById("price")
+           var txtQty = document.getElementById("qty")
+           var discount = document.getElementById("discount")
+           let discountAmount;
+
+           let amount = parseFloat(txtPrice.value) * parseFloat(txtQty.value) 
+
+           if(amount > 5000)
+              discountAmount = amount * 0.30;
+           else
+            if(amount > 3000)
+               discountAmount = amount * 0.20;
+            else
+              discountAmount = amount * 0.10;
+
+          discount.innerHTML = discountAmount;
+        }
+    </script>
+</head>
+<body>
+    <h2>Discount Calculation</h2>
+    <label for="price">Selling Price</label>
+    <br/>
+    <input type="number" id="price" />
+    <p></p>
+    <label for="qty">Quantity</label>
+    <br/>
+    <input type="number" id="qty" />
+    <p></p>
+    <button onClick="calculateDiscount()">Calculate</button>
+    <p></p>
+    <h2 id="discount"></h2>
+
+    
+</body>
+</html>
