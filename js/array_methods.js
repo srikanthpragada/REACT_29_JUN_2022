@@ -2,6 +2,7 @@
 let names = ["JavaScript", "Java", "Python", "C#"]
 
 names.push("TypeScript")
+console.log(names.length)
 console.log(names)
 
 names.splice(0, 1)   // Delete 0th element 

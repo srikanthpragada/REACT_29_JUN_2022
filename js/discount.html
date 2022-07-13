@@ -23,6 +23,11 @@
               discountAmount = amount * 0.10;
 
           discount.innerHTML = discountAmount;
+
+          if(discountAmount > 2000)
+             discount.style.color = 'green';
+          else             
+            discount.style.color = 'black';
         }
     </script>
 </head>

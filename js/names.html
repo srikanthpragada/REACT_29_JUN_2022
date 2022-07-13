@@ -5,11 +5,11 @@
     <script>
         "use strict";
         let names = [];  // Empty array 
+        let fullname = document.getElementById('fullname');
 
         function addName() {
-            let fullname = document.getElementById('fullname');
+           
             names.push(fullname.value)  // add name to array 
-
             // Display names 
             showNames();
         }
