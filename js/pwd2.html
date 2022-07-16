@@ -1,0 +1,27 @@
+<html>
+    <head><title>Login Page</title></head>
+    <body>
+    Enter Name: <input type="text" title="Enter Name Here">
+    <p></p>
+    Password:  <input type="password" id="hi"> 
+    <button onclick = "Check()" title="Click here to verify if password is Authentic or not">Verify</button>
+    <h3 id = "hoi"></h3>
+    <script>
+        function Check(){
+        var a = document.getElementById("hi").value
+        var b = document.getElementById("hoi")
+        b.innerHtml = "Password is Valid";
+        let num = /[0-9]/.test(a)
+        let up = /[A-Z]/.test(a)     /*  \w /[A-Z]/  */
+        let spchar = /[$|@]/.test(a)    
+        if (num && up && spchar){
+            b.innerHtml = "Password is Valid";
+            b.style.color= "green"; }
+        else{
+            b.innerHtml = "Password is Invalid";
+            b.style.color="red";
+        } 
+        }
+    </script>
+    </body>
+</html>

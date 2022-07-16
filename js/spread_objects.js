@@ -1,11 +1,8 @@
-/ Spread operator with object
+let o1 = {x : 10, y : 20}
 
-let p2 = { ...person, mobile: '484883343', email  : 'alex@yahoo.com' };
-console.log(p2)
+let o2 = {...o1, z : 30}
 
-function display({name, email}) {
-    console.log(name)
-    console.log(email)
-}
+console.log(o2)
 
-display(person)   // To be done 
+let o3 = { ...o1, x : 100}
+console.log(o3)

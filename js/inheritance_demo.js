@@ -18,9 +18,9 @@ class DiscountedProduct extends Product  {
     // Override method in super class 
     sellingPrice() {
         let discount = this.price * this.discountRate / 100;
-        let before_tax = this.price - discount;
-        let after_tax = before_tax * 1.08; // 8% tax
-        return after_tax;
+        let discounted_price = this.price - discount;
+        let net_price = discounted_price * 1.08; // 8% tax
+        return net_price;
     }
 }
 
