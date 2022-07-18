@@ -4,8 +4,9 @@
     Enter Name: <input type="text" title="Enter Name Here">
     <p></p>
     Password:  <input type="password" id="hi"> 
-    <button onclick = "Check()" title="Click here to verify if password is Authentic or not">Verify</button>
-    <h3 id = "hoi"></h3>
+    <button onClick = "Check()" 
+            title="Click here to verify if password is Authentic or not">Verify</button>
+    <h3 id="hoi"></h3>
     <script>
         function Check(){
         var a = document.getElementById("hi").value
@@ -15,10 +16,11 @@
         let up = /[A-Z]/.test(a)     /*  \w /[A-Z]/  */
         let spchar = /[$|@]/.test(a)    
         if (num && up && spchar){
-            b.innerHtml = "Password is Valid";
-            b.style.color= "green"; }
+            b.innerHTML = "Password is Valid";
+            b.style.color= "green"; 
+        }
         else{
-            b.innerHtml = "Password is Invalid";
+            b.innerHTML = "Password is Invalid";
             b.style.color="red";
         } 
         }

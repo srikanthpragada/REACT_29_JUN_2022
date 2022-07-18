@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h2>Event Bubbling Demo</h2>
+    <div id="div1" style="background-color:gray">
+        This is DIV!!! Click here to show something!!
+        <p id="p1" style="margin-top:20px;background-color:red;color:white">This is paragraph!!!</p>
+    </div>
+    <hr />
+    <h2>Event Capturing Demo</h2>
+    <div id="div2" style="background-color:gray">This is DIV!!! Click here to show something!!
+        <p id="p2" style="margin-top:20px;background-color:red;color:white">This is para graph!!!</p>
+    </div>
+
+    <script>
+        // Event bubbling (Default)
+        document.getElementById("p1").addEventListener
+            ('click', function () { console.log('Click on Para') });
+
+        document.getElementById("div1").addEventListener
+            ('click', function () { console.log('Click on DIV') });
+
+       // Event Capturing 
+       document.getElementById("p2").addEventListener
+            ('click', function () { console.log('Click on Para') }, true);
+
+        document.getElementById("div2").addEventListener
+            ('click', function () { console.log('Click on DIV') }, true);
+
+    </script>
+
+</body>
+
+</html>
