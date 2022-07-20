@@ -7,15 +7,16 @@
             background-color: blue;
             color: white;
             font-size: 3em;
-            height: 200px;
-            line-height: 200px;
+            height: 300px;
             text-align: center;
+            word-wrap: break-word;
+            overflow: auto;
         }
     </style>
 </head>
 <script>
     function fadeIn() {
-        $("#banner").fadeIn(5000);
+        $("#banner").fadeIn(5000); // millseconds
     }
 
     function fadeOut() {
@@ -23,7 +24,8 @@
     }
 
     function slideToggle() {
-        $("#banner").slideToggle(1000, () => alert("Done!"));
+        $("#banner").slideToggle(1000, 
+               () => alert("Done!"));
     }
 
     function hideBanner() {
@@ -34,9 +36,9 @@
          $("#banner").animate(
             {
                opacity : '0.25',
-               color : 'red',
+              // color : 'red',
                fontSize : '4em',
-               height : "200px"         
+               //height : "200px"         
             },
             2000,
             () =>  console.log("Done")
@@ -45,7 +47,7 @@
 
 </script
 <body>
-    <div id="banner" class="banner">
+    <div id="banner" class="banner"> 
         Srikanth Technologies
     </div>
     <p></p>
