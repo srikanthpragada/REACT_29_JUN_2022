@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"> </script>
+</head>
+<script>
+    function getTime() {
+        const URL = "http://worldtimeapi.org/api/timezone/Asia/Kolkata"
+        $.get(URL,
+            function (result) {
+                //console.log(result)
+                $("#message").text(result.datetime)
+            }
+        );
+    }
+
+    function getESTTime() {
+        const URL = "http://worldtimeapi.org/api/timezone/est"
+        $.ajax(
+                {
+                    url: URL,
+                    type: 'get',
+                    success: (result) => { $("#message").text(result.datetime) },
+                    error: (errorObj) => {
+                        console.log(errorObj)
+                        alert("Sorry! Could not get time!")
+                    }
+                }
+            );
+    }
+
+
+</script
+<body>
+    <button onclick="getTime()">Get Local Time</button>
+    <button onclick="getESTTime()">Get EST Time</button>
+    <h1 id="message"></h1>
+</body>
+</html>
