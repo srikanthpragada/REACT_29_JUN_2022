@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Hello} from './basics/Hello';
+import Course from './basics/Course';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Hello />
+    <Course  title = "Python"  duration = {36}  fee = {5000} />
+    <hr/>
+    <Course  title = "React"  duration = {12}  fee = {2000} />
   </React.StrictMode>
 );
 
