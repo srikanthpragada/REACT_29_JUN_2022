@@ -17,8 +17,8 @@ export default function Products() {
                 <tbody>
                     {
                         products.map(
-                            prod => <PrintProduct key={prod.id}
-                                product={prod} />
+                            prod =>
+                             <PrintProduct key={prod.id}  product={prod} />
                         )
                     }
                 </tbody>

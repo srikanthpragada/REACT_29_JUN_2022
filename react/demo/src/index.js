@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Products from './basics/Products2';
 import reportWebVitals from './reportWebVitals';
+import Counter from './state/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Products />
+     <Counter />
   </React.StrictMode>
 );
 
