@@ -3,25 +3,39 @@ import React, { useState } from 'react'
 export default function Contacts() {
   let [contacts, setContacts] = useState([])
 
-
-  function addNewContact(contact) {
+  function addNewContact(newContact) {
     // add new contact to contacts 
-    setContacts([...contacts, { ...contact }])
+    let contact = contacts.find( (c) => c.name === newContact.name && c.email === newContact.email)
+    if(contact) // found an existing contact with same details
+      alert("Sorry! Duplicate Contact!")
+    else
+      setContacts([...contacts, { ...newContact }])
   }
 
-
   function deleteContact(idxToDelete) {
-    let newContacts = contacts.filter((c, idx) => idx !== idxToDelete);
-    setContacts(newContacts)
+    if (window.confirm("Do you want to delete?")) {
+      let newContacts = contacts.filter((c, idx) => idx !== idxToDelete);
+      setContacts(newContacts)
+    }
   }
 
   return (
     <>
       <h1>Contacts</h1>
-      <AddContact  add={addNewContact}/>
+      <AddContact add={addNewContact} />
       <p></p>
-      <ListContacts />
-      <p></p>
+      {contacts.length > 0 ?
+        <ListContacts contacts={contacts}
+          deleteContact={deleteContact} />
+        : <h3 className="text-danger">No contacts!</h3>
+      }
+    </>
+  )
+}
+
+function ListContacts({ contacts, deleteContact }) {
+  return (
+    <>
       <h5>No. of contacts = {contacts.length}</h5>
       <table className="table table-bordered">
         <thead>
@@ -46,12 +60,8 @@ export default function Contacts() {
   )
 }
 
-function ListContacts() {
-  
-}
 
-
-function AddContact({add}) {
+function AddContact({ add }) {
   let [contact, setContact] = useState({ name: '', email: '' })
 
   function updateName(e) {
@@ -62,20 +72,26 @@ function AddContact({add}) {
     setContact({ ...contact, email: e.target.value })
   }
 
+  function clearAll(e) {
+     e.preventDefault()
+     setContact( { name :'', email : ''})
+  }
   function addContact(e) {
-      e.preventDefault() 
-      add(contact)    // Call addNewContact in parent component 
+    e.preventDefault()
+    add(contact)    // Call addNewContact in parent component 
   }
 
   return (
-    <form onSubmit={addContact}>
+    <>
+    <form className="d-inline-block" onSubmit={addContact}>
       Name : <input type="text" value={contact.name}
         onChange={updateName} required />
       Email : <input type="email" value={contact.email}
         onChange={updateEmail} required />
       <button className="ms-2">Add</button>
     </form>
-
+    <button onClick={clearAll} className="ms-2">Clear</button> 
+    </>
   )
 
 
