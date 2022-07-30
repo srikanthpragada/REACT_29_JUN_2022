@@ -64,6 +64,7 @@ function ListContacts({ contacts, deleteContact }) {
 function AddContact({ add }) {
   let [contact, setContact] = useState({ name: '', email: '' })
 
+  /*
   function updateName(e) {
     setContact({ ...contact, name: e.target.value })
   }
@@ -71,7 +72,7 @@ function AddContact({ add }) {
   function updateEmail(e) {
     setContact({ ...contact, email: e.target.value })
   }
-
+*/
   function clearAll(e) {
      e.preventDefault()
      setContact( { name :'', email : ''})
@@ -81,13 +82,19 @@ function AddContact({ add }) {
     add(contact)    // Call addNewContact in parent component 
   }
 
+  function updateText(e) {
+     let name = e.target.name   // get name of control
+     let value = e.target.value  // get value of control 
+     setContact( { ...contact, [name] : value})
+  }
+
   return (
     <>
     <form className="d-inline-block" onSubmit={addContact}>
-      Name : <input type="text" value={contact.name}
-        onChange={updateName} required />
-      Email : <input type="email" value={contact.email}
-        onChange={updateEmail} required />
+      Name : <input type="text" name="name" value={contact.name}
+        onChange={updateText} required />
+      Email : <input type="email" name="email" value={contact.email}
+        onChange={updateText} required />
       <button className="ms-2">Add</button>
     </form>
     <button onClick={clearAll} className="ms-2">Clear</button> 

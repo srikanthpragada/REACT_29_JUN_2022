@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import JQueryDemo from './ajax/JQueryDemo';
 import reportWebVitals from './reportWebVitals';
-import Contacts from './state/Contacts2';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Contacts />
+      <JQueryDemo />
   </React.StrictMode>
 );
 
