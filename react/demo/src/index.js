@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import JQueryDemo from './ajax/JQueryDemo';
+import Countries from './ajax/Countries';
 import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <JQueryDemo />
+  <React.StrictMode> 
+      <Countries />
   </React.StrictMode>
 );
 

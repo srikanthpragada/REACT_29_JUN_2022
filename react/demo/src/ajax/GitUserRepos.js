@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import $ from 'jquery'
 
-export default function GitUserInfoJQuery() {
+export default function GitUserRepos() {
     const userid = React.createRef()
     const [data, setData] = useState({})
     const [message, setMessage] = useState('')

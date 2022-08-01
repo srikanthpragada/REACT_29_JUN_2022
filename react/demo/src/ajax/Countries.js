@@ -15,7 +15,6 @@ export default function Countries() {
                 setCountries(resp);
                 setSelectedCountries(resp);
                 setLoading(false)
-
             },
             error: (error) => {
 
@@ -33,7 +32,8 @@ export default function Countries() {
     return (
         <div>
             <h1>Find Country Information</h1>
-            Country Name: <input type="text" ref={countryName} onChange={getInfo} />
+            Country Name: <input type="text" ref={countryName} 
+                            onChange={getInfo} />
             <p></p>
 
             {isLoading ? <span>Loading... please wait...</span> :
