@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import $ from 'jquery'
 
-export default function AddCourses() {
+export default function AddCourse() {
     const [course, setCourse] = useState({})
     
     function changeValue(e) {

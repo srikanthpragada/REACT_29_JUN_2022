@@ -4,7 +4,7 @@ import $ from 'jquery'
 export default function ListCourses() {
     const [courses, setCourses] = useState([])
 
-    useEffect( () => {
+    useEffect(() => {
         $.get(
             {
                 url: `http://localhost:4000/courses`,
@@ -12,7 +12,7 @@ export default function ListCourses() {
                     setCourses(courses)
                 },
                 error: function (error) {
-                     alert("Sorry! Server is unreachable!")
+                    alert("Sorry! Server is unreachable!")
                 }
             }
         );
@@ -23,21 +23,21 @@ export default function ListCourses() {
     return (
         <>
             <h1>Courses</h1>
-         
+
             {courses.length > 0 &&
                 <table className="table table-bordered">
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Trainer</th> 
+                            <th>Trainer</th>
                             <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {courses.map((c, idx) => 
+                        {courses.map((c, idx) =>
                             <tr key={idx}>
                                 <td>
-                                   {c.title.toUpperCase()}
+                                    {c.title.toUpperCase()}
                                 </td>
                                 <td>
                                     {c.trainer}
