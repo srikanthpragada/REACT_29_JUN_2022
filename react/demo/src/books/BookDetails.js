@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { BOOKS_URL } from './constants';
 
 export default function BookDetails() {
-    let { bookId } = useParams();
+    // console.log(useParams())
+    let { bookId } = useParams();  // returns object with router params 
     const [book, setBook] = useState({ title : "", author : "", price : ""})
 
     useEffect(() => {

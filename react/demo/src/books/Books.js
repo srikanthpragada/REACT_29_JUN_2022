@@ -12,6 +12,7 @@ import {
     Link,
     Outlet
 } from "react-router-dom";
+import EditBook from "./EditBook";
 
 export default function Books() {
     return (
@@ -24,6 +25,7 @@ export default function Books() {
                     <Route path="authors" element={<ListAuthors />} />
                     <Route path="search" element={<SearchBooks />} />
                     <Route path="details/:bookId" element={<BookDetails />} />
+                    <Route path="edit/:bookId" element={<EditBook />} />
                     <Route path="*" element={
                         <h3>Sorry! Page Not Found!!!</h3>
                     } />

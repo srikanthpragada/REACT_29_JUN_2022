@@ -6,6 +6,7 @@ export default function AddBook() {
   let [book, setBook] = useState({ title: "", author: "", price: 0 })
 
   function addBook(event) {
+    event.preventDefault()
     // make ajax request for post 
     $.ajax(
       {
@@ -23,7 +24,7 @@ export default function AddBook() {
     )
     // Clear textboxes by resetting book object 
     setBook({ title: "", author: "", price: 0 })
-    event.preventDefault()
+   
   }
 
   function changeValue(event) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
-import {BOOKS_URL} from './constants'
+import { BOOKS_URL } from './constants'
 import { Link } from "react-router-dom";
 
 export default function ListBooks() {
@@ -19,6 +19,9 @@ export default function ListBooks() {
         ) // get
     }
     function deleteBook(id) {
+        if (!window.confirm("Do you want to delete?"))
+           return;
+
         $.ajax(
             {
                 url: `${BOOKS_URL}/${id}`,
@@ -35,7 +38,6 @@ export default function ListBooks() {
         )
     }
 
-
     return (
         <>
             <h3>List of Books</h3>
@@ -51,12 +53,16 @@ export default function ListBooks() {
                         books.map((book) =>
                             <tr key={book.id}>
                                 <td>{book.title} </td>
-                                <td className="text-center" style={{ width: '20%' }}>
+                                <td className="text-center"
+                                    style={{ width: '30%' }}>
                                     <button onClick={() => deleteBook(book.id)}
                                         className="btn btn-danger">Delete</button>
                                     &nbsp;
                                     <Link to={`/details/${book.id}`}
                                         className="btn btn-info">Details</Link>
+                                    &nbsp;
+                                    <Link to={`/edit/${book.id}`}
+                                        className="btn btn-info">Edit </Link>
                                 </td>
                             </tr>
                         )
