@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
 import { BOOKS_URL } from './constants'
 
-export default function ListBooks() {
+export default function SearchBooks() {
     const [books, setBooks] = useState([])
     const [selectedBooks, setSelectedBooks] = useState([])
     const [searchText, setSearchText] = useState()
@@ -29,12 +29,12 @@ export default function ListBooks() {
         setSelectedBooks(books.filter((book) => book.title.includes(searchText)))
         setDone(true)
     }
-
-
+    
     return (
         <>
             <h3>Search Books</h3>
-            Title <input type="text" value={searchText} onChange={changeValue} />
+            Title <input type="text" value={searchText}
+                  onChange={changeValue} />
             <button onClick={searchBooks}>Search</button>
             <p></p>
             
